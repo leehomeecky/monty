@@ -8,7 +8,7 @@ void print_stack(const stack1_t **h, unsigned int ln);
  */
 void print_stack(const stack1_t  **h, unsigned int ln)
 {
-	const stack1_t *curr = variables.head2;
+	stack1_t *curr = variables.head2;
 
 	(void)h;
 	(void)ln;
