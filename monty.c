@@ -32,6 +32,26 @@ int checkFileExtension(const char *filename, const char *extension)
 		return (-1);
 }
 /**
+ * checkfile - ========
+ * @filename: ========
+ * Return: =====
+ */
+void checkfile(char *filename)
+{
+	int fileDescriptor;
+
+	fileDescriptor = open(filename, O_RDONLY);
+	if (fileDescriptor == -1)
+	{
+		fprintf(stderr, "Error: Can't open file %s\n", filename);
+		close(fileDescriptor);
+		exit(EXIT_FAILURE);
+	}
+	close(fileDescriptor);
+}
+
+
+/**
  * main - entry point
  * @argc: arg count
  * @argv: argv
@@ -46,6 +66,7 @@ int main(int argc, char **argv)
 	{
 		fprintf(stderr, "USAGE: monty file\n"), exit(EXIT_FAILURE);
 	}
+	checkfile(argv[1]);
 	variables.mode = "stack";
 	variables.filename = argv[1];
 	atexit(exitHandler);

@@ -24,7 +24,7 @@
  */
 typedef struct token_t
 {
-	char *_token[2048];
+	char *_token[4048];
 } token_t;
 
 
@@ -137,5 +137,6 @@ int hasLetter(char *token);
 void free_stack(stack1_t *head);
 int checkFileExtension(const char *filename, const char *extension);
 void exitHandler(void);
+void checkfile(char *filename);
 
 #endif
