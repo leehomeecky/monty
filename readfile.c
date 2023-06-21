@@ -41,7 +41,7 @@ while ((bytesRead = read(fileDescriptor, buffer, 4048)) > 0)
 			line[lineLength] = '\0';
 			j++;
 			token = (char **)tokenize((char *)line);
-			if (token != NULL)
+			if (token != NULL && token[0][0] != '#')
 			{
 			if (validateOPCODE(token) == 0 && validateOPCODEarg(token) == 0)
 			{
