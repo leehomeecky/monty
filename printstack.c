@@ -14,7 +14,7 @@ void print_stack(const stack1_t  **h, unsigned int ln)
 	(void)ln;
 	if (curr == NULL)
 		return;
-	while (curr != NULL)
+	while (curr)
 	{
 		printf("%d\n", curr->n);
 		curr = curr->next;
