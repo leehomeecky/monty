@@ -50,6 +50,7 @@ while ((bytesRead = read(fileDescriptor, buffer, 4048)) > 0)
 			f = select_opcode(token);
 			if (f != NULL)
 			{
+			close(fileDescriptor);
 			f(&head, j);
 			}
 			}
