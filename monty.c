@@ -62,7 +62,7 @@ int main(int argc, char **argv)
 
 	variables.head2 = NULL;
 	variables.err_no = 0;
-	if (argc != 2 || checkFileExtension(argv[1], ".m") != 0)
+	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
