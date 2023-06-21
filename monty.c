@@ -64,7 +64,8 @@ int main(int argc, char **argv)
 	variables.err_no = 0;
 	if (argc != 2)
 	{
-		fprintf(stderr, "USAGE: ./monty file\n"), exit(EXIT_FAILURE);
+		fprintf(stderr, "USAGE: monty file\n");
+		exit(EXIT_FAILURE);
 	}
 	checkfile(argv[1]);
 	variables.mode = "stack";
