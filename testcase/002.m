@@ -14,4 +14,6 @@ pall
                 pall
     shift
 add
+pall
 sub
+pall
