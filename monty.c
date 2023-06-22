@@ -8,13 +8,13 @@ void exitHandler(void)
 {
 	if (variables.head2 != NULL)
 		free_stack(variables.head2);
-	if (close(variables.fileDescriptor) == -1)
-		return;
 	variables.filename = NULL;
 	variables.head2 = NULL;
 	variables.err_no = 0;
 	variables.fileDescriptor = 0;
 	variables.mode = NULL;
+	if (close(variables.fileDescriptor) == -1)
+		return;
 }
 /**
  * checkFileExtension - check extension
