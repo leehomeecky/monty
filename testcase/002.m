@@ -12,3 +12,4 @@ pall
                     push 9
                                     pop
                 pall
+    shift
