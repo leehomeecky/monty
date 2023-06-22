@@ -17,3 +17,5 @@ add
 pall
 sub
 pall
+mul
+pall
