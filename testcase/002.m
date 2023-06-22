@@ -9,3 +9,4 @@ pall
 pop mnm,, nkm jklkl;jn jnjknk
 pall
                     push                7
+                    push 9
