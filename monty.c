@@ -10,6 +10,11 @@ void exitHandler(void)
 		free_stack(variables.head2);
 	if (close(variables.fileDescriptor) == -1)
 		return;
+	variables.filename = NULL;
+	variables.head2 = NULL;
+	variables.err_no = 0;
+	variables.fileDescriptor = 0;
+	variables.mode = NULL;
 }
 /**
  * checkFileExtension - check extension
