@@ -19,3 +19,5 @@ sub
 pall
 mul
 pall
+div
+pall
