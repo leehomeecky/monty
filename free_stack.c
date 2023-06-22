@@ -11,13 +11,11 @@ void free_stack(stack1_t *head)
 	stack1_t *temp = NULL;
 	(void)head;
 
-	if (curr == NULL)
-		return;
-	while (curr != NULL)
+
+	while (curr)
 	{
 		temp = curr;
 		curr = curr->next;
 		free(temp);
 	}
-	variables.head2 = NULL;
 }
