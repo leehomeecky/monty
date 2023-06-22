@@ -11,3 +11,4 @@ pall
                     push                7
                     push 9
                                     pop
+                pall
