@@ -8,11 +8,6 @@ void exitHandler(void)
 {
 	if (variables.head2 != NULL)
 		free_stack(variables.head2);
-	variables.filename = NULL;
-	variables.head2 = NULL;
-	variables.err_no = 0;
-	variables.fileDescriptor = 0;
-	variables.mode = NULL;
 	if (close(variables.fileDescriptor) == -1)
 		return;
 }
@@ -44,50 +39,40 @@ int checkFileExtension(const char *filename, const char *extension)
 void checkfile(char *filename)
 {
 	int fileDescriptor;
-	char *file = NULL;
 
-	file = strrchr(filename, '/');
-	if (file != NULL)
+	fileDescriptor = open(filename, O_RDONLY);
+	if (fileDescriptor == -1)
 	{
-		file++;
-	}
-	else
-	{
-		file = filename;
-	}
-		fileDescriptor = open(filename, O_RDONLY);
-		if (fileDescriptor == -1)
-		{
-			fprintf(stderr, "Error: Can't open file %s\n", file);
-			close(fileDescriptor);
-			exit(EXIT_FAILURE);
-		}
+		fprintf(stderr, "Error: Can't open file %s\n", filename);
 		close(fileDescriptor);
+		exit(EXIT_FAILURE);
 	}
+	close(fileDescriptor);
+}
 
 
-	/**
-	 * main - entry point
-	 * @argc: arg count
-	 * @argv: argv
-	 * Return: 0
-	 */
-	int main(int argc, char **argv)
+/**
+ * main - entry point
+ * @argc: arg count
+ * @argv: argv
+ * Return: 0
+ */
+int main(int argc, char **argv)
+{
+
+	variables.head2 = NULL;
+	variables.err_no = 0;
+	if (argc != 2)
 	{
-
-		variables.head2 = NULL;
-		variables.err_no = 0;
-		if (argc != 2)
-		{
-			fprintf(stderr, "USAGE: monty file\n");
-			exit(EXIT_FAILURE);
-		}
-		checkfile(argv[1]);
-		variables.mode = "stack";
-		variables.filename = argv[1];
-		atexit(exitHandler);
-		loadlinedata(0, variables.filename);
-		free_stack(variables.head2);
-
-		return (0);
+		fprintf(stderr, "USAGE: monty file\n");
+		exit(EXIT_FAILURE);
 	}
+	checkfile(argv[1]);
+	variables.mode = "stack";
+	variables.filename = argv[1];
+	atexit(exitHandler);
+	loadlinedata(0, variables.filename);
+	free_stack(variables.head2);
+
+	return (0);
+}
