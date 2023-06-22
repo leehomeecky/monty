@@ -6,6 +6,6 @@ pop
             pall
 pop
 pall
-pop
+pop mnm,, nkm jklkl;jn jnjknk
 pall
                     push                7
