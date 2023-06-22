@@ -6,7 +6,7 @@
  */
 char **tokenize(char *line)
 {
-	const char delimiters[] = " \n$";
+	const char delimiters[] = " \n\t$";
 	/*	char **tokens = malloc(1024 * sizeof(char*));*/
 	/*	char *tokens[1024];*/
 	int numTokens = 0;
