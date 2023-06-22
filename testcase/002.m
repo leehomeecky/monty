@@ -8,3 +8,4 @@ pop
 pall
 pop
 pall
+                    push                7
