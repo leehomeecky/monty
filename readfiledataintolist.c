@@ -9,9 +9,9 @@ void *loadlinedatatolist(int ln, char *MONTY_FILE);
  */
 void *loadlinedatatolist(int ln, char *MONTY_FILE)
 {
-	char buffer[4048];
+	char buffer[50000];
 	ssize_t bytesRead;
-	char line[4048];
+	char line[50000];
 	int i, fileDescriptor, lineLength = 0;
 	char **token;
 	int j = 0;
@@ -30,7 +30,7 @@ void *loadlinedatatolist(int ln, char *MONTY_FILE)
 	}
 
 	j = 0;
-while ((bytesRead = read(fileDescriptor, buffer, 4048)) > 0)
+while ((bytesRead = read(fileDescriptor, buffer, 50000)) > 0)
 {
 for (i = 0; i < bytesRead; i++)
 {

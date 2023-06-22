@@ -24,7 +24,7 @@
  */
 typedef struct token_t
 {
-	char *_token[4048];
+	char *_token[50000];
 } token_t;
 
 
