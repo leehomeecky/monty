@@ -19,4 +19,5 @@ void free_stack(stack1_t *head)
 		curr = curr->next;
 		free(temp);
 	}
+	variables.head2 = NULL;
 }
