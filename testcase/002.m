@@ -21,3 +21,5 @@ mul
 pall
 div
 pall kjlk jknkj
+#pop
+pall
