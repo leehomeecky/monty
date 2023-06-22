@@ -74,7 +74,9 @@ To run the program:
 * **queue**
   * Switches a stack to queue mode.
 
+:arrow_forward: Opcodes preceeded by a `#` are treated as comments and the corresponding line is ignored.
 
+:arrow_forward: Lines can be empty and can contain any number of spaces before or after an opcode and its argument (only the first opcode and/or argument is taken into account).
 
 ### :blue_book: Authors
 
