@@ -11,7 +11,7 @@ void free_stack(stack1_t *head)
 	stack1_t *temp = NULL;
 	(void)head;
 
-	while (curr != NULL)
+	while (curr)
 	{
 		temp = curr;
 		curr = curr->next;
